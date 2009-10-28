@@ -1,4 +1,4 @@
+= javascript_include_tag 'jquery.js', 'lib/jstree/jquery.tree.js', 'organizations'
 
-%ul
-  - @organizations.each do |org|
-    = generate_tree(org)
+#organizations
+  = generate_tree(@organizations)
