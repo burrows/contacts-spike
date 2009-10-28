@@ -208,7 +208,6 @@
 				if(this.settings.ui.theme_name !== false) {
 					if(this.settings.ui.theme_path === false) {
 						$("script").each(function () { 
-              console.log(this.src.toString());
 							if(this.src.toString().match(/jquery\.tree.*?js(\?\d+)?$/)) { _this.settings.ui.theme_path = this.src.toString().replace(/jquery\.tree.*?js(\?\d+)?$/, "") + "themes/" + _this.settings.ui.theme_name + "/style.css"; return false; }
 						});
 					}

@@ -1,5 +1,6 @@
 = javascript_include_tag 'jquery.js', 'lib/jstree/jquery.tree.js', 'contact-tree'
 = javascript_include_tag 'lib/jstree/plugins/jquery.tree.contextmenu.js'
 
+%h1= @agency.name
 .contact-tree
-  = generate_tree(@organizations)
+  = generate_tree(@agency.children)
