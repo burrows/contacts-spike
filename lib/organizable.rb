@@ -1,7 +1,7 @@
 module Organizable
   def self.included(klass)
     klass.before_create :init_organization_node
-    klass.has_one :organization_node, :as => :contact
+    klass.has_one :organization_node, :as => :contact, :dependent => :destroy
   end
 
   def parent

@@ -3,7 +3,7 @@ module OrganizationsHelper
     content_tag(:ul,
       content_tag(:li,
         content_tag(:a, "<ins>&nbsp;</ins>Contacts", :href => '#') +
-        content_tag(:ul, organizations.map { |o| generate_tree_node(o) }.join)))
+        content_tag(:ul, organizations.map { |o| generate_tree_node(o) }.join), :class => 'root-node'))
   end
 
   def generate_tree_node(org)

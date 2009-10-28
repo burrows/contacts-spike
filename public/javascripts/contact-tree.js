@@ -1,5 +1,5 @@
 $(function() {
-  $('.contact-tree').tree({
+  var trees = $('.contact-tree').tree({
     ui: {
       theme_name: 'classic'
     },
@@ -29,4 +29,15 @@ $(function() {
       }
     }
   });
+
+  var tree = $.tree.reference('.contact-tree');
+
+  $('form').submit(function(e) {
+    var form = e.target;
+    e.preventDefault();
+    $.post(form.action, $(form).serialize(), function(data, status) {
+      $(form).find(':input:text').val('');
+      tree.create(data, $('.root-node'), 'inside');
+    }, 'json');
+  })
 });

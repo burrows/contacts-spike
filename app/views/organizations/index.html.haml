@@ -1,5 +1,25 @@
 = javascript_include_tag 'jquery.js', 'lib/jstree/jquery.tree.js', 'contact-tree'
 = javascript_include_tag 'lib/jstree/plugins/jquery.tree.contextmenu.js'
 
+%h2= 'New Agency'
+- form_for Agency.new do |f|
+  = f.label :name
+  = f.text_field :name
+  %br
+  = f.submit 'Create'
+%br
+%h2= 'New Contact'
+- form_for Person.new do |f|
+  = f.label :name
+  = f.text_field :name
+  %br
+  = f.label :phone
+  = f.text_field :phone
+  %br
+  = f.label :email
+  = f.text_field :email
+  %br
+  = f.submit 'Create'
+%br
 .contact-tree
   = generate_tree(@organizations)
